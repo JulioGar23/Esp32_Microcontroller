@@ -1,3 +1,6 @@
+//Fade Version 2
+//Code by: Julio A. García-Rodríguez.
+
 int led = 2;
 int brillo = 0;
 int incremento = 5;
@@ -12,6 +15,7 @@ void setup() {
                                 //         "resolution" select resolution for LEDC channel. Range is 1-14 bits (1-20 bits for some versions of ESP32).
 
   // ledcAttach(0, 4000, 8);    // 4 kHz PWM, 8-bit resolution.
+  // Documentation in https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/ledc.html
 }
 
 void loop() {
