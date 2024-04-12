@@ -1,0 +1,22 @@
+int led = 2;
+int brillo = 0;
+int incremento = 5;
+
+void setup() {
+  ledcAttach(led, 100, 8);  // assign a led pins to a channel
+  //ledcSetup(0, 12000, 12);
+  // Initialize channels
+  // channels 0-15, resolution 1-16 bits, freq limits depend on resolution
+  // ledcSetup(channel, freq, resolution_bits);
+  // You can try different setup settings, such as:
+  // ledcSetup(0, 4000, 8); // 4 kHz PWM, 8-bit resolution
+}
+
+void loop() {
+  ledcWrite(led, brillo);
+  brillo = brillo + incremento;
+  if (brillo <= 0 || brillo >= 256) {  // if you have selected 8 bits resolution, change 3 to 2^8 = 256
+    incremento = -incremento;
+  }
+  delay(30);
+}
