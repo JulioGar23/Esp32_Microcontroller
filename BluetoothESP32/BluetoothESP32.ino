@@ -1,6 +1,6 @@
 #include "BluetoothSerial.h"
 
-#define USE_PIN // Uncomment this to use PIN during pairing. The pin is specified on the line below
+//#define USE_PIN // Uncomment this to use PIN during pairing. The pin is specified on the line below
 const char *pin = "01234"; // Change this to more secure PIN.
 
 String device_name = "ESP32-ITCG-IIOT";

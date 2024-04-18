@@ -5,10 +5,10 @@ WebServer server(80);
 
 void setup() {
   Serial.begin(115200);
-  const char* ssid     = "ITCG";                        // Nombre de la RED Wifi
-  const char* password = "";                            // Password
+  const char* ssid     = "DELLG5";                        // Nombre de la RED Wifi
+  const char* password = "julio1234";                            // Password
   
-  Serial.println("Desconectamos antes de conectar el WiFi");
+  Serial.println("Iniciar la conexión a WiFi");
   WiFi.disconnect();
   
   Serial.print("Conectando a  ");
@@ -31,14 +31,7 @@ void setup() {
   Serial.println(WiFi.localIP());
   
   //Si entramos a la raiz mostramos las opciones
-  server.on("/", []() {
-    String content="";
-    content += "<html>";
-    content += "<div><a href=\"encender\">Encender</a></div>";
-    content += "<div><a href=\"apagar\">Apagar</a></div>";
-    content += "</html>";
-    server.send(200, "text/html", content);
-  });
+  server.on("/", mensaje);
   server.begin();
 }
 void loop() {
@@ -47,4 +40,10 @@ void loop() {
   delay(100);
 }
 
-
+void mensaje()   //Función que responde el sitio web
+{
+  // http status code 200 = OK
+  // http status code 400 = bad request
+  // Se llama al mensaje que saldrá en el sitio web
+  server.send(200, "text/html", "<h2> Este es un mensaje en HTML desde el ESP32. <br> CUSUR </h2>");
+}
