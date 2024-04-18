@@ -5,8 +5,8 @@ WebServer server(80);
 
 void setup() {
   Serial.begin(115200);
-  const char* ssid     = "DELLG5";                        // Nombre de la RED Wifi
-  const char* password = "julio1234";                            // Password
+  const char* ssid     = "practica5";                        // Nombre de la RED Wifi
+  const char* password = "123456789";                            // Password
   
   Serial.println("Iniciar la conexión a WiFi");
   WiFi.disconnect();
